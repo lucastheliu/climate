@@ -1,45 +1,93 @@
 ---
-import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+
 import members from "../assets/profiles/members.json";
+import taxonomy from "../assets/taxonomy.pdf";
 
 const profiles = await Astro.glob("../assets/profiles/*.{png,jpg,jpeg,gif}");
 ---
 
 <Layout>
 	<main>
-		<article class="prose prose-zinc w-full"></article>
-		<div class="grid grid-cols-3 items-center gap-8 w-4/5 mx-auto p-24">
+		<div class="flex flex-col gap-8 w-4/5 mx-auto p-24">
 			{
-				members.map(({ name, profile }, index) => {
-					const image = profiles.find((p) => {
-						const filename = p.default.src.split("/").pop().split(".")[0];
-						return filename === profile;
-					});
+				members.map(
+					(
+						{ name, profile, email, grade, roles, position, linkedin },
+						index,
+					) => {
+						const image = profiles.find((p) => {
+							const filename = p.default.src.split("/").pop().split(".")[0];
+							return filename === profile;
+						});
 
-					return (
-						<div class="border border-zinc-200">
-							{image ? (
-								<Image
-									src={image.default}
-									alt="Profile Picture"
-									width={400}
-									height={400}
-									class="object-cover aspect-square"
-								/>
-							) : (
-								<div class="flex items-center justify-center aspect-square bg-zinc-200">
-									<span class="text-lg font-bold">No image available</span>
+						return (
+							<div class="border border-zinc-200 flex rounded-md">
+								<div class="w-64 flex-shrink-0">
+									{image ? (
+										<Image
+											src={image.default}
+											alt={`Profile of ${name}`}
+											width={400}
+											height={400}
+											class="object-cover aspect-square w-full rounded-l-md"
+											loading={index <= 2 ? "eager" : "lazy"}
+										/>
+									) : (
+										<div class="flex items-center justify-center aspect-square bg-zinc-200 rounded-l-md">
+											<span class="text-lg font-bold">No image available</span>
+										</div>
+									)}
 								</div>
-							)}
+								<div class="flex flex-col justify-center gap-4 p-6 flex-grow">
+									<div class="space-y-2">
+										<p class="font-bold text-xl">{name}</p>
+										<div class="flex items-center gap-3 text-zinc-600">
+											<button
+												onclick={`navigator.clipboard.writeText('${email}')`}
+												class="hover:text-zinc-900 cursor-pointer"
+												title="Click to copy email"
+											>
+												{email}
+											</button>
+											{linkedin && (
+												<a href={linkedin} class="hover:text-zinc-900">
+													<Icon name="hugeicons:linkedin-01" class="size-6" />
+												</a>
+											)}
+										</div>
+										{grade && <p class="text-zinc-600">Grade: {grade}</p>}
+										{position && (
+											<p class="text-zinc-600">Position: {position}</p>
+										)}
+									</div>
 
-							<div class="flex items-center h-20 px-8">
-								<p class="font-bold">{name}</p>
+									<div class="flex flex-wrap gap-2 mt-4">
+										{roles.map((role) => (
+											<span class="bg-zinc-100 text-zinc-700 px-3 rounded-full text-sm whitespace-nowrap">
+												{role}
+											</span>
+										))}
+									</div>
+								</div>
 							</div>
-						</div>
-					);
-				})
+						);
+					},
+				)
 			}
+			<object
+				data={taxonomy}
+				type="application/pdf"
+				width="100%"
+				height="100%"
+				class="aspect-[1/1.414] p-24"
+				><p>
+					Your browser does not support PDFs.
+					<a href={taxonomy}>Download the PDF</a> to view it.
+				</p></object
+			>
 		</div>
 	</main>
 </Layout>

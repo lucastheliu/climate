@@ -1,10 +1,101 @@
 [
-	{ "name": "Tianran Wang", "profile": "tim" },
-	{ "name": "Chawanvit Tangwongsiri", "profile": "pat" },
-	{ "name": "BOGOLYUBOV Grigoriy", "profile": "grisha" },
-	{ "name": "Haolin Liu", "profile": "lucas" },
-	{ "name": "LAZARD Serena", "profile": "serena" },
-	{ "name": "OZYEGIN Yaz", "profile": "yaz" },
-	{ "name": "VON SCHWEICKHARDT Antoinette", "profile": "antoinette" },
-	{ "name": "RALPH Tichler", "profile": "tichler" }
+	{
+		"name": "Tianran Wang",
+		"profile": "tim",
+		"email": "tianran.wang@stu.rosey.ch",
+		"grade": 11,
+		"linkedin": "https://www.linkedin.com/in/tianran-wang-a1762034b/",
+		"roles": [
+			"Conceptualization",
+			"Investigation",
+			"Methodology",
+			"Project administration",
+			"Resources",
+			"Supervision",
+			"Validation",
+			"Visualization",
+			"Writing – original draft",
+			"Writing – review & editing"
+		]
+	},
+	{
+		"name": "Chawanvit Tangwongsiri",
+		"profile": "pat",
+		"email": "chawanvit.tangwongsiri@stu.rosey.ch",
+		"grade": 11,
+		"linkedin": "https://www.linkedin.com/in/chawanvit-tangwongsiri-6b01a7291/",
+		"roles": [
+			"Conceptualization",
+			"Investigation",
+			"Methodology",
+			"Resources",
+			"Validation",
+			"Visualization",
+			"Writing – original draft",
+			"Writing – review & editing"
+		]
+	},
+	{
+		"name": "BOGOLYUBOV Grigoriy",
+		"profile": "grisha",
+		"email": "grigoriy.bogolyubov@stu.rosey.ch",
+		"grade": 10,
+		"roles": [
+			"Investigation",
+			"Resources",
+			"Visualization",
+			"Writing – original draft"
+		]
+	},
+	{
+		"name": "Haolin Liu",
+		"profile": "lucas",
+		"email": "haolin.liu@stu.rosey.ch",
+		"grade": 11,
+		"linkedin": "https://www.linkedin.com/in/lucas-liu-024b26330/",
+		"roles": [
+			"Conceptualization",
+			"Data curation",
+			"Formal analysis",
+			"Investigation",
+			"Methodology",
+			"Resources",
+			"Software",
+			"Supervision",
+			"Validation",
+			"Visualization",
+			"Writing – original draft",
+			"Writing – review & editing"
+		]
+	},
+	{
+		"name": "LAZARD Serena",
+		"profile": "serena",
+		"email": "serena.lazard@stu.rosey.ch",
+		"grade": 9,
+		"roles": ["Writing – original draft"]
+	},
+	{
+		"name": "OZYEGIN Yaz",
+		"profile": "yaz",
+		"email": "yaz.ozyegin@stu.rosey.ch",
+		"grade": 9,
+		"roles": ["Writing – original draft"]
+	},
+	{
+		"name": "VON SCHWEICKHARDT Antoinette",
+		"profile": "antoinette",
+		"email": "antoinette.schweickhardt@stu.rosey.ch",
+		"grade": 9,
+		"roles": ["Writing – original draft"]
+	},
+	{
+		"name": "RALPH Tichler",
+		"profile": "tichler",
+		"email": "rtichler@rosey.ch",
+		"grade": null,
+		"linkedin": "https://www.linkedin.com/in/ralph-t-292a5811a/",
+		"roles": ["Project administration", "Supervision"],
+		"position": "Teacher"
+	}
 ]

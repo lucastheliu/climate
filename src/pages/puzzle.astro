@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Content from "../data/articles/puzzle.md";
+import { Image } from "astro:assets";
+import puzzle from "../assets/puzzle.png";
+---
+
+<Layout>
+	<main class="flex flex-col items-center p-24">
+		<article class="prose prose-zinc w-full">
+			<div class="group w-full my-24">
+				<Image
+					src={puzzle}
+					alt="Avalanche Safety Guide"
+					width={820}
+					height={720}
+				/>
+			</div>
+			<Content />
+		</article>
+	</main>
+</Layout>

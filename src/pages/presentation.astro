@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Content from "../data/articles/presentation.md";
+import presentation from "../assets/presentation.pdf";
+---
+
+<Layout>
+	<main class="flex flex-col items-center p-24">
+		<article class="prose prose-zinc w-full">
+			<object
+				data={presentation}
+				type="application/pdf"
+				width="100%"
+				height="100%"
+				class="aspect-[16/9] my-24"
+				><p>
+					Your browser does not support PDFs.
+					<a href={presentation}>Download the PDF</a> to view it.
+				</p></object
+			>
+			<Content />
+		</article>
+	</main>
+</Layout>

@@ -1,0 +1,65 @@
+---
+import { Icon } from "astro-icon/components";
+import navlinks from "./navlinks.json";
+---
+
+<footer class="bg-white border border-zinc-200">
+	<div class="grid grid-cols-4 gap-8 px-24 py-8">
+		<!--  -->
+		<div>
+			<h3 class="text-lg font-bold py-4">Climate Detective LeRosey</h3>
+			<div class="flex flex-col gap-2">
+				{
+					navlinks.home.map(({ label, href }) => (
+						<a href={href} class="hover:underline">
+							{label}
+						</a>
+					))
+				}
+			</div>
+		</div>
+
+		<!--  -->
+		<div>
+			<h3 class="text-lg font-bold py-4">Research Papers</h3>
+			<div class="flex flex-col gap-2">
+				{
+					navlinks.research.map(({ label, href }, index) => (
+						<a href={href} class="hover:underline">
+							{index + 1}. {label}
+						</a>
+					))
+				}
+			</div>
+		</div>
+
+		<!--  -->
+		<div>
+			<h3 class="text-lg font-bold py-4">Make a Difference</h3>
+			<div class="flex flex-col gap-2">
+				{
+					navlinks.media.map(({ label, href }) => (
+						<a href={href} class="hover:underline">
+							{label}
+						</a>
+					))
+				}
+			</div>
+		</div>
+
+		<!--  -->
+		<div>
+			<h3 class="text-lg font-bold py-4">Social Media</h3>
+			<div class="flex flex-col gap-2">
+				{
+					navlinks.others.map(({ label, href, icon }) => (
+						<a href={href} class="flex gap-3 hover:underline">
+							<Icon name={icon} class="size-6" />
+							{label}
+						</a>
+					))
+				}
+			</div>
+		</div>
+	</div>
+</footer>

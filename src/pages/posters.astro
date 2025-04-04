@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Content from "../data/articles/presentation.md";
+import { Image } from "astro:assets";
+import safety from "../assets/safety.png";
+---
+
+<Layout>
+	<main class="flex flex-col items-center p-24">
+		<article class="prose prose-zinc w-full">
+			<div class="group w-full my-24">
+				<Image
+					src={safety}
+					alt="Avalanche Safety Guide"
+					width={800}
+					height={2000}
+					class="object-cover opacity-0 transition-opacity duration-500"
+					onload="this.classList.add('opacity-100')"
+					loading={"eager"}
+				/>
+			</div>
+			<Content />
+		</article>
+	</main>
+</Layout>

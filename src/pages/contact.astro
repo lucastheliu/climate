@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import Layout from "../layouts/Layout.astro";
+import members from "../assets/profiles/members.json";
+
+const profiles = await Astro.glob("../assets/profiles/*.{png,jpg,jpeg,gif}");
+---
+
+<Layout>
+	<main>
+		<article class="prose prose-zinc w-full"></article>
+		<div class="grid grid-cols-3 items-center gap-8 w-4/5 mx-auto p-24">
+			{
+				members.map(({ name, profile }, index) => {
+					const image = profiles.find((p) => {
+						const filename = p.default.src.split("/").pop().split(".")[0];
+						return filename === profile;
+					});
+
+					return (
+						<div class="border border-zinc-200">
+							{image ? (
+								<Image
+									src={image.default}
+									alt="Profile Picture"
+									width={400}
+									height={400}
+									class="object-cover aspect-square"
+								/>
+							) : (
+								<div class="flex items-center justify-center aspect-square bg-zinc-200">
+									<span class="text-lg font-bold">No image available</span>
+								</div>
+							)}
+
+							<div class="flex items-center h-20 px-8">
+								<p class="font-bold">{name}</p>
+							</div>
+						</div>
+					);
+				})
+			}
+		</div>
+	</main>
+</Layout>

@@ -1,0 +1,78 @@
+---
+import navlinks from "./navlinks.json";
+---
+
+<header class="bg-white shadow-sm fixed w-full z-50">
+	<nav class="flex justify-between items-center px-24 h-16">
+		<!-- Left side navigation links -->
+		<div class="flex items-center gap-8">
+			{navlinks.home.map(({ label, href }) => <a href={href}>{label}</a>)}
+		</div>
+
+		<!-- Right side dropdown -->
+		<div class="flex gap-2">
+			<!-- -->
+			<div class="relative group">
+				<button
+					class="flex items-center rounded-md hover:bg-zinc-100 px-4 py-2"
+				>
+					Research Papers
+					<svg
+						class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M5 15l7-7 7 7"></path>
+					</svg>
+				</button>
+				<div
+					class="absolute py-2 w-full bg-white rounded-md border border-zinc-200 hidden group-hover:block"
+				>
+					{
+						navlinks.research.map(({ label, href }, index) => (
+							<a href={href} class="block px-4 py-2">
+								{index + 1}. {label}
+							</a>
+						))
+					}
+				</div>
+			</div>
+			<!-- -->
+			<div class="relative group">
+				<button
+					class="flex items-center rounded-md hover:bg-zinc-100 px-4 py-2"
+				>
+					Make a Difference
+					<svg
+						class="w-4 h-4 ml-1 transform group-hover:rotate-180 transition-transform"
+						fill="none"
+						stroke="currentColor"
+						viewBox="0 0 24 24"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M5 15l7-7 7 7"></path>
+					</svg>
+				</button>
+				<div
+					class="absolute py-2 w-full bg-white rounded-md border border-zinc-200 hidden group-hover:block"
+				>
+					{
+						navlinks.media.map(({ label, href }) => (
+							<a href={href} class="block px-4 py-2">
+								{label}
+							</a>
+						))
+					}
+				</div>
+			</div>
+		</div>
+	</nav>
+</header>

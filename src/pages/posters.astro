@@ -6,20 +6,47 @@ import safety from "../assets/safety.png";
 ---
 
 <Layout>
-	<main class="flex flex-col items-center p-24">
-		<article class="prose prose-zinc w-full">
-			<div class="group w-full my-24">
-				<Image
-					src={safety}
-					alt="Avalanche Safety Guide"
-					width={800}
-					height={2000}
-					class="object-cover opacity-0 transition-opacity duration-500"
-					onload="this.classList.add('opacity-100')"
-					loading="eager"
-				/>
-			</div>
-			<Content />
-		</article>
-	</main>
+  <div class="flex justify-center w-full">
+    <Image
+      src={safety}
+      alt="Avalanche Safety Guide"
+      width={800}
+      height={2000}
+      class="object-cover opacity-0 transition-opacity duration-500 max-w-xl"
+      onload="this.classList.add('opacity-100')"
+      loading="eager"
+    />
+  </div>
+  <article class="prose prose-zinc max-w-xl pt-24">
+    <h1>Avalanche Safety Guide Poster</h1>
+    <p>
+      This poster provides a concise yet comprehensive overview of essential
+      avalanche safety information, including:
+    </p>
+    <ul>
+      <li>
+        <strong>Slope Angles:</strong> Identifies the slope angles most prone to
+        avalanches.
+      </li>
+      <li>
+        <strong>Avalanche Indicators:</strong> Highlights indicators of avalanche
+        activity, such as distinct sounds.
+      </li>
+      <li>
+        <strong>Critical Equipment:</strong> Outlines the necessary equipment to
+        stay prepared in high-risk areas.
+      </li>
+    </ul>
+    <p>
+      A link to the complete guide will be provided once the survey is
+      completed.
+    </p>
+    <p>
+      By highlighting the conditions under which avalanches occur and the
+      measures necessary to avoid or mitigate their impact, this resource
+      empowers individuals to make informed decisions, enhances overall safety
+      awareness, and ultimately has the potential to save lives in winter sports
+      environments.
+    </p>
+  </article>
 </Layout>

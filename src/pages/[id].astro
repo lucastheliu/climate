@@ -5,15 +5,15 @@ import type { CollectionEntry } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 
 export async function getStaticPaths() {
-	const articles = await getCollection("articles");
-	return articles.map((article: CollectionEntry<"articles">) => ({
-		params: { id: article.id },
-		props: { article },
-	}));
+  const articles = await getCollection("articles");
+  return articles.map((article: CollectionEntry<"articles">) => ({
+    params: { id: article.id },
+    props: { article },
+  }));
 }
 
 interface Props {
-	article: CollectionEntry<"articles">;
+  article: CollectionEntry<"articles">;
 }
 
 const { article } = Astro.props;
@@ -21,9 +21,7 @@ const { Content } = await render(article);
 ---
 
 <Layout>
-	<main class="flex flex-col items-center p-24">
-		<article class="prose prose-zinc w-full">
-			<Content />
-		</article>
-	</main>
+  <article class="prose prose-zinc w-full py-12">
+    <Content />
+  </article>
 </Layout>

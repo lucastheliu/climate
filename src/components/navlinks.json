@@ -1,15 +1,8 @@
 {
 	"home": [
 		{ "label": "Home", "href": "/climate" },
-		{ "label": "Contact", "href": "/climate/contact" }
-	],
-	"research": [
-		{ "label": "Introduction", "href": "/climate/introduction" },
-		{ "label": "Methods", "href": "/climate/methods" },
-		{ "label": "Results", "href": "/climate/results" },
-		{ "label": "Conclusion", "href": "/climate/conclusion" },
-		{ "label": "References", "href": "/climate/references" },
-		{ "label": "Declaration", "href": "/climate/declaration" }
+		{ "label": "Contact", "href": "/climate/contact" },
+		{ "label": "Research", "href": "/climate/research" }
 	],
 	"media": [
 		{ "label": "Presentation", "href": "/climate/presentation" },

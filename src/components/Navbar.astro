@@ -1,0 +1,51 @@
+---
+import { Icon } from "astro-icon/components";
+import navlinks from "./navlinks.json";
+---
+
+<header
+  class="fixed top-0 left-0 right-0 bg-white border-b border-zinc-200 z-50"
+>
+  <nav class="flex justify-between items-center max-w-5xl h-20 mx-auto px-12">
+    <h1 class="text-xl font-bold">LEROSEY TEAM</h1>
+    <ul class="hidden md:flex items-center">
+      {
+        navlinks.home.map(({ label, href }) => (
+          <li>
+            <a href={href} class="hover:underline p-4">
+              {label}
+            </a>
+          </li>
+        ))
+      }
+      <li class="relative group">
+        <button
+          class="flex items-center rounded-md rounded-b-none group-hover:bg-zinc-100 p-4"
+        >
+          Make a Difference
+          <Icon
+            name="hugeicons:circle-arrow-up-01"
+            size={20}
+            class="ml-2 transform group-hover:rotate-180 transition-transform"
+          />
+        </button>
+        <ul
+          class="absolute left-0 right-0 bg-white rounded-md rounded-t-none border border-zinc-200 hidden group-hover:block"
+        >
+          {
+            navlinks.media.map(({ label, href }) => (
+              <li class="border-b border-zinc-200">
+                <a href={href} class="block hover:underline p-4">
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </li>
+    </ul>
+    <button class="block md:hidden hover:cursor-pointer">
+      <Icon name="hugeicons:menu-01" size={24} />
+    </button>
+  </nav>
+</header>

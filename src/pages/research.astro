@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import research from "../assets/research.pdf";
+---
+
+<Layout>
+  <article class="flex items-center prose prose-zinc w-full h-screen">
+    <object
+      data={research}
+      type="application/pdf"
+      width="100%"
+      height="100%"
+      class="size-full"
+      ><p>
+        Your browser does not support PDFs.
+        <a href={research}>Download the PDF</a> to view it.
+      </p></object
+    >
+  </article>
+</Layout>

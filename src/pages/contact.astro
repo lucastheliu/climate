@@ -10,7 +10,9 @@ const profiles = await Astro.glob("../assets/profiles/*.{png,jpg,jpeg,gif}");
 ---
 
 <Layout>
-  <div class="flex flex-col justify-center gap-8 max-w-4xl mx-auto">
+  <div
+    class="flex flex-col justify-center gap-8 max-w-sm md:max-w-4xl mx-auto w-full overflow-hidden"
+  >
     {
       members.map(
         ({ name, profile, email, grade, roles, position, linkedin }, index) => {
@@ -20,15 +22,15 @@ const profiles = await Astro.glob("../assets/profiles/*.{png,jpg,jpeg,gif}");
           });
 
           return (
-            <div class="border border-zinc-200 flex rounded-md">
-              <div class="w-64 flex-shrink-0">
+            <div class="flex flex-col md:flex-row border border-zinc-200 rounded-md">
+              <div class="w-full md:w-64 flex-shrink-0">
                 {image ? (
                   <Image
                     src={image.default}
                     alt={`Profile of ${name}`}
                     width={400}
                     height={400}
-                    class="object-cover aspect-square h-full rounded-l-md"
+                    class="object-cover aspect-square w-full md:h-full rounded-t-md md:rounded-l-md"
                     loading={index <= 2 ? "eager" : "lazy"}
                   />
                 ) : (
@@ -43,7 +45,7 @@ const profiles = await Astro.glob("../assets/profiles/*.{png,jpg,jpeg,gif}");
                   <div class="flex items-center gap-3 text-zinc-600">
                     <button
                       onclick={`navigator.clipboard.writeText('${email}')`}
-                      class="hover:text-zinc-900 cursor-pointer"
+                      class="hover:text-zinc-900 hover:underline cursor-pointer truncate min-w-0"
                       title="Click to copy email"
                     >
                       {email}

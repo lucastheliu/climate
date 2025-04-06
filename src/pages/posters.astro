@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Content from "../data/articles/presentation.md";
 import { Image } from "astro:assets";
 import safety from "../assets/safety.png";
 ---
@@ -12,7 +11,7 @@ import safety from "../assets/safety.png";
       alt="Avalanche Safety Guide"
       width={800}
       height={2000}
-      class="object-cover opacity-0 transition-opacity duration-500 max-w-xl"
+      class="object-cover opacity-0 transition-opacity duration-500 w-full max-w-xl"
       onload="this.classList.add('opacity-100')"
       loading="eager"
     />

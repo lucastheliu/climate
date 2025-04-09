@@ -1,12 +1,22 @@
 ---
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 import navlinks from "./navlinks.json";
+import logo from "../assets/logo.png";
 ---
 
 <footer class="bg-white border-t border-zinc-200 mt-8 pb-8">
   <div class="grid grid-cols-2 md:grid-cols-4 gap-8 px-12 py-8">
-    <div class="flex items-center h-full bg-zinc-100">
-      <h1 class="w-full text-center underline">Logo Placeholder</h1>
+    <div class="flex items-center h-full p-4">
+      <Image
+        src={logo}
+        alt="Logo"
+        width={1024}
+        height={1024}
+        class="object-cover opacity-0 transition-opacity duration-500 w-full max-w-xl"
+        onload="this.classList.add('opacity-100')"
+        loading="eager"
+      />
     </div>
     <!--  -->
     <div>

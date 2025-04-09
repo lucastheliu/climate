@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 import navlinks from "./navlinks.json";
+import logo from "../assets/logo.png?url";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,9 +11,12 @@ export default function Navbar() {
   }
 
   return (
-    <nav className="flex justify-between items-center max-w-5xl h-20 mx-auto px-12">
-      <h1 className="text-xl font-bold">LEROSEY TEAM</h1>
-      <ul className="hidden md:flex items-center">
+    <nav className="flex justify-between items-center max-w-6xl h-28 mx-auto px-12 border-b border-zinc-200 mb-8 z-50">
+      <div className="flex gap-4 items-center justify-center">
+        <img src={logo} alt="Logo" loading="eager" className="size-24" />
+        <h1 className="text-xl font-bold">LEROSEY TEAM</h1>
+      </div>
+      <ul className="hidden md:grid grid-cols-3 lg:flex items-center">
         {navlinks.home.map(({ label, href }, index) => (
           <li key={index}>
             <a href={href} className="hover:underline p-4">
@@ -39,6 +43,13 @@ export default function Navbar() {
             ))}
           </ul>
         </li>
+        {navlinks.extras.map(({ label, href }, index) => (
+          <li key={index}>
+            <a href={href} className="hover:underline p-4">
+              {label}
+            </a>
+          </li>
+        ))}
       </ul>
       <button
         onClick={toggleMenu}
@@ -78,6 +89,13 @@ export default function Navbar() {
               ))}
             </ul>
           </li>
+          {navlinks.extras.map(({ label, href }, index) => (
+            <li key={index} className="border-b border-zinc-200">
+              <a href={href} className="block hover:underline p-4">
+                {label}
+              </a>
+            </li>
+          ))}
         </ul>
       </div>
     </nav>

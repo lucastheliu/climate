@@ -4,7 +4,6 @@ import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 
 import members from "../assets/profiles/members.json";
-import taxonomy from "../assets/taxonomy.pdf";
 
 const profiles = await Astro.glob("../assets/profiles/*.{png,jpg,jpeg,gif}");
 ---
@@ -76,15 +75,18 @@ const profiles = await Astro.glob("../assets/profiles/*.{png,jpg,jpeg,gif}");
       )
     }
     <object
-      data={taxonomy}
+      data={"taxonomy.pdf"}
       type="application/pdf"
       width="100%"
       height="100%"
       class="aspect-[1/1.414] max-w-2xl mx-auto"
       ><p>
         Your browser does not support PDFs.
-        <a href={taxonomy}>Download the PDF</a> to view it.
+        <a href={"taxonomy.pdf"} download>Download the PDF</a> to view it.
       </p></object
+    >
+    <a class="underline hover:cursor-pointer" href={"taxonomy.pdf"}
+      >View it in your native browser.</a
     >
   </div>
 </Layout>

@@ -1,31 +1,35 @@
 {
-	"home": [
-		{ "label": "Home", "href": "/climate" },
-		{ "label": "Contact", "href": "/climate/contact" },
-		{ "label": "Research", "href": "/climate/research" }
-	],
-	"media": [
-		{ "label": "Presentation", "href": "/climate/presentation" },
-		{ "label": "Posters", "href": "/climate/posters" },
-		{ "label": "Social Media", "href": "/climate/media" },
-		{ "label": "Survey", "href": "/climate/survey" },
-		{ "label": "Puzzle", "href": "/climate/puzzle" }
-	],
-	"others": [
-		{
-			"label": "Instagram",
-			"href": "https://www.instagram.com/climate_detectives_rosey/",
-			"icon": "hugeicons:instagram"
-		},
-		{
-			"label": "X (Twitter)",
-			"href": "https://x.com/ClimateRos32519",
-			"icon": "hugeicons:twitter"
-		},
-		{
-			"label": "LinkedIn",
-			"href": "https://www.linkedin.com/in/climatedetective-rosey-a4b18435a/",
-			"icon": "hugeicons:new-twitter-rectangle"
-		}
-	]
+  "home": [
+    { "label": "Home", "href": "/climate" },
+    { "label": "Contact", "href": "/climate/contact" },
+    { "label": "Research", "href": "/climate/research" }
+  ],
+  "media": [
+    { "label": "Presentation", "href": "/climate/presentation" },
+    { "label": "Posters", "href": "/climate/posters" },
+    { "label": "Social Media", "href": "/climate/media" },
+    { "label": "Survey", "href": "/climate/survey" },
+    { "label": "Puzzle", "href": "/climate/puzzle" }
+  ],
+  "extras": [
+    { "label": "SubZero-GPT", "href": "/climate/subzero" },
+    { "label": "Disclaimer", "href": "/climate/disclaimer" }
+  ],
+  "others": [
+    {
+      "label": "Instagram",
+      "href": "https://www.instagram.com/climate_detectives_rosey/",
+      "icon": "hugeicons:instagram"
+    },
+    {
+      "label": "X (Twitter)",
+      "href": "https://x.com/ClimateRos32519",
+      "icon": "hugeicons:twitter"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/climatedetective-rosey-a4b18435a/",
+      "icon": "hugeicons:new-twitter-rectangle"
+    }
+  ]
 }

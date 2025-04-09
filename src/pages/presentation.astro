@@ -6,17 +6,18 @@ import Content from "../data/articles/presentation.md";
 <Layout>
   <article class="prose prose-zinc w-full">
     <object
-      data={"presentation.pdf"}
+      data={"/climate/presentation.pdf"}
       type="application/pdf"
       width="100%"
       height="100%"
       class="aspect-[8/9] pb-24"
       ><p>
         Your browser does not support PDFs.
-        <a href={"presentation.pdf"} download>Download the PDF</a> to view it.
+        <a href={"/climate/presentation.pdf"} download>Download the PDF</a> to view
+        it.
       </p></object
     >
-    <a class="underline hover:cursor-pointer" href={"presentation.pdf"}
+    <a class="underline hover:cursor-pointer" href={"/climate/presentation.pdf"}
       >View it in your native browser.</a
     >
     <Content />

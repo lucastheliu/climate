@@ -75,17 +75,17 @@ const profiles = await Astro.glob("../assets/profiles/*.{png,jpg,jpeg,gif}");
       )
     }
     <object
-      data={"taxonomy.pdf"}
+      data={"/climate/taxonomy.pdf"}
       type="application/pdf"
       width="100%"
       height="100%"
       class="aspect-[1/1.414] max-w-2xl mx-auto"
       ><p>
         Your browser does not support PDFs.
-        <a href={"taxonomy.pdf"} download>Download the PDF</a> to view it.
+        <a href={"/climate/taxonomy.pdf"} download>Download the PDF</a> to view it.
       </p></object
     >
-    <a class="underline hover:cursor-pointer" href={"taxonomy.pdf"}
+    <a class="underline hover:cursor-pointer" href={"/climate/taxonomy.pdf"}
       >View it in your native browser.</a
     >
   </div>
